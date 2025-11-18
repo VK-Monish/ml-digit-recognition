@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digit Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>MNIST Digit Recognition</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if filename %}
+    <img src="/static/{{ filename }}" class="preview">
+    {% endif %}
+
+    {% if prediction is not none %}
+    <h2>Predicted Digit: {{ prediction }}</h2>
+    {% endif %}
+</div>
+
+</body>
+</html>
+
